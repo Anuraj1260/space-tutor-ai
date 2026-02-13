@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 import { Mic, MicOff, Volume2, Play } from 'lucide-react';
 
 // --- 👇 YOUR WORKING KEY HERE 👇 ---
-const API_KEY = "AIzaSyCVBVTSpemAvt2j3z1G1uvXuv7xTZC2t8M"; 
+const API_KEY = "Paste your api key here"; 
 
 const SYSTEM_INSTRUCTION = `
 You are a playful teacher talking to a 6-year-old.
