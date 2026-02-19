@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti';
 import { Mic, MicOff, Volume2, Play } from 'lucide-react';
 
 // --- 👇 YOUR WORKING KEY HERE 👇 ---
-const API_KEY = "Paste your api key here"; 
+const API_KEY = "paste your working key here"; 
 
 const SYSTEM_INSTRUCTION = `
 You are a playful teacher talking to a 6-year-old.
@@ -56,11 +56,23 @@ export default function App() {
   }, [status, timeLeft]);
 
   // --- 3. START THE GAME (AI INITIATES) ---
+// --- 3. START THE GAME (AI INITIATES) ---
   const startLesson = () => {
     setStatus("speaking");
-    const intro = "Hello! I am Captain Dog. Look at this picture! What animal do you see?";
-    setText(intro);
-    speak(intro, true); // true = turn on mic after speaking
+    
+    // A list of different ways to start the conversation about the Earth image
+    const intros = [
+      "Hello! I am your Space Captain. Look at this amazing picture of Earth! Do you see the bright city lights?",
+      "Welcome aboard! We are flying high over planet Earth. What colors do you see down there?",
+      "Hi there, explorer! Look at our beautiful planet from space. Can you spot the dark oceans?",
+      "Greetings! This is Earth shining in the dark. What do you think those shiny golden spots are?"
+    ];
+
+    // Pick a random intro from the list above
+    const randomIntro = intros[Math.floor(Math.random() * intros.length)];
+
+    setText(randomIntro);
+    speak(randomIntro, true); // true = turn on mic after speaking
   };
 
   // --- 4. AI BRAIN (Gemini) ---
