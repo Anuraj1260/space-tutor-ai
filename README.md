@@ -1,57 +1,114 @@
-# 🚀 AI Space Tutor: Real-Time Interaction
+# 🚀 Space Learning Game - Hindi & English (Round 2)
 
-An interactive educational web app where an AI "Space Captain" teaches a child about the solar system. The AI initiates a voice conversation, listens to the child's responses in real-time, and provides visual rewards (confetti) for correct answers.
+**🌐 Live Demo:** [https://space-tutor-ai.vercel.app/](https://space-tutor-ai.vercel.app/)
 
-## 🌟 Key Features
+An interactive bilingual educational game where an AI "Space Captain" teaches children about space in both Hindi and English. The background changes dynamically based on what the child says, creating an immersive learning experience.
 
-* **🗣️ Real-Time Voice Interaction:** Uses the browser's native Web Speech API for low-latency speech recognition and synthesis.
-* **🧠 Intelligent AI:** Powered by **Google Gemini 1.5 Flash** to generate context-aware, child-friendly responses.
-* **⏱️ 1-Minute Micro-Lesson:** Automatically manages a 60-second focused learning session with a countdown timer.
-* **🎉 Visual Feedback:** Triggers a "Tool Call" (Confetti explosion) dynamically when the AI detects a correct answer.
-* **🖼️ Contextual Visuals:** Displays engaging space imagery to guide the conversation.
+## 🌟 Features
+
+* **🎨 Dynamic Backgrounds:** Screen changes based on child's answers (Earth, Mars, Moon, Sun, Astronaut)
+* **🗣️ Bilingual AI:** Every line includes both Hindi and English
+* **📚 Gentle English Teaching:** When child speaks Hindi, AI gently teaches the English equivalent
+* **🇮🇳 Indian Accent:** AI speaks with Indian English accent (en-IN)
+* **🎉 Visual Rewards:** Confetti celebration for correct answers
+* **⏱️ 60-Second Game:** Timed learning session with countdown
+* **🎤 Voice Recognition:** Recognizes both Hindi and English speech
+* **🔄 Continuous Flow:** AI automatically asks next question after feedback
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** React.js + Vite
-* **AI Model:** Google Gemini 1.5 Flash (via Direct REST API)
-* **Voice:** Web Speech API (SpeechRecognition & SpeechSynthesis)
-* **Styling:** CSS-in-JS (Responsive Card Layout)
-* **Icons:** Lucide React
+* React 19 + Vite
+* Groq AI (Llama 3.1-8B Instant)
+* Web Speech API (hi-IN for Hindi + English recognition)
+* Canvas Confetti
+* Lucide React Icons
 
-## 📦 How to Run Locally
+## 📦 Local Development
 
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/Anuraj1260/space-tutor-ai.git](https://github.com/Anuraj1260/space-tutor-ai.git)
-    cd space-tutor-ai
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Anuraj1260/space-tutor-ai.git
+   cd space-tutor-ai
+   ```
 
-2.  **Install Dependencies**
-    ```bash
-    npm install
-    ```
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-3.  **Configure API Key**
-    * Open `src/App.jsx`.
-    * Find the line: `const API_KEY = "PASTE_YOUR_KEY_HERE";`
-    * Replace it with your **Google Gemini API Key**.
-    * *(Get a free key here: https://aistudio.google.com/app/apikey)*
+3. **Create .env file**
+   ```bash
+   # Create .env file in root directory
+   VITE_GROQ_API_KEY=your_groq_api_key_here
+   ```
 
-4.  **Run the App**
-    ```bash
-    npm run dev
-    ```
-5.  **Start Learning**
-    * Open `http://localhost:5173` in **Google Chrome** (Required for voice support).
-    * Click **"Start Lesson"** and talk to the Captain!
+4. **Run the App**
+   ```bash
+   npm run dev
+   ```
 
-## 📝 Project Flow (Logic)
+5. **Open in Browser**
+   * Open `http://localhost:5173` in **Google Chrome**
+   * Click **"Start Game"** and answer in Hindi or English!
 
-1.  **Initiation:** User clicks Start -> AI greets the user and asks a question about the image.
-2.  **Listening:** Microphone opens automatically after the AI finishes speaking.
-3.  **Processing:** User speech is sent to Gemini 1.5 Flash with a system prompt to act as a teacher.
-4.  **Tool Call:** If the AI response contains the keyword "CORRECT", the `confetti()` function triggers.
-5.  **Completion:** Session ends automatically when the 60-second timer hits zero.
+## 🚀 Deploy to Vercel
+
+### Step 1: Push to GitHub
+```bash
+git add .
+git commit -m "Round 2: Complete bilingual space game"
+git push origin main
+```
+
+### Step 2: Deploy on Vercel
+1. Go to [vercel.com](https://vercel.com) and sign in
+2. Click **"Add New Project"**
+3. Import your GitHub repository
+4. Configure:
+   - Framework Preset: **Vite**
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+5. Add Environment Variable:
+   - Name: `VITE_GROQ_API_KEY`
+   - Value: Your Groq API key
+6. Click **"Deploy"**
+7. Wait 2-3 minutes for deployment
+8. Test your deployed link!
+
+## 🎮 How to Play
+
+1. Click "Start Game"
+2. AI asks a riddle in Hindi + English
+3. Answer using your voice (Hindi or English)
+4. Watch the background change when you're correct!
+5. Learn English translations when you speak Hindi
+6. Play for 60 seconds
+
+## 📝 Example Interaction
+
+**AI:** "नमस्ते! Hello! मैं रात में चमकता हूँ। I shine bright at night. मैं क्या हूँ? What am I?"
+
+**Child:** "चाँद" (Moon in Hindi)
+
+**AI:** "बहुत अच्छा! Very good! In English, we say 'Moon'. अब बताओ, मैं बहुत गर्म हूँ। Now tell me, I am very hot. What am I?"
+
+[Background changes to Moon image + Confetti]
+
+## 🌐 Browser Compatibility
+
+- ✅ **Chrome** (Recommended) - Best voice support
+- ✅ **Edge** - Good voice support
+- ⚠️ **Firefox** - Limited voice support
+- ⚠️ **Safari** - Limited voice support
+
+## 🔗 Links
+
+- **Live App:** [https://space-tutor-ai.vercel.app/](https://space-tutor-ai.vercel.app/)
+- **GitHub:** [https://github.com/Anuraj1260/space-tutor-ai](https://github.com/Anuraj1260/space-tutor-ai)
+
+## 📄 License
+
+MIT License - Feel free to use for educational purposes
 
 ---
-*Built for the Real-Time AI Hackathon.*
+*Built for Round 2 submission - Real-Time AI Learning Platform*
