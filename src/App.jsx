@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
-import { Mic, MicOff, Volume2, Play } from 'lucide-react';
+import { Mic, Volume2, Play } from 'lucide-react';
 
-// --- 👇 YOUR WORKING KEY HERE 👇 ---
-const API_KEY = "paste your working key here"; 
+// API Key from environment variable (secure for deployment)
+const API_KEY = import.meta.env.VITE_GROQ_API_KEY; 
 
 const SYSTEM_INSTRUCTION = `
 You are a playful teacher talking to a 6-year-old.
